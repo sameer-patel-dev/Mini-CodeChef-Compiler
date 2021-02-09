@@ -16,7 +16,8 @@ const Navbar = () => {
       if(state.role == 'admin')
       {
         return [
-          <Link to="/join">Add a Psychiatrist</Link>,
+          <Link to="/admin">Dashboard</Link>,
+          <Link to="/admin/add">Add a Psychiatrist</Link>,
           <Link to="/join">Chatroom</Link>,
           <Link to="/signin" onClick={()=>{
                                             localStorage.clear()
@@ -50,7 +51,7 @@ const Navbar = () => {
       else if(state.role == 'student')
       {
         return [
-          <Link to="/profile">Profile</Link>,
+          <Link to="/student">Profile</Link>,
           <Link to="/exercise">Exercises</Link>,
           <Link to="/join">Chatroom</Link>,
           <Link to="/signin" onClick={()=>{

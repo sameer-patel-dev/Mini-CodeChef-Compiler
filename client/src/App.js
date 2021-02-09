@@ -2,17 +2,17 @@ import React,{useEffect,createContext, useReducer, useContext, useState} from 'r
 import './components/FontawesomeIcons'
 import './App.css'
 import NavBar from './components/navbar/Navbar'
-import Sidebar from "./components/sidebar/Sidebar";
 import {BrowserRouter, Route, Switch, useHistory} from 'react-router-dom'
 import Home from './components/Home/Home'
 import Exercise from './components/Exercise/Exercise'
 import Breathing from './components/Breathing/Breathing'
-import Aspmt from './components/AspmtTests/Aspmt'
+import Aspmt from './components/AspmtHomePage/AspmtHomePage'
 import Test1 from './components/AspmtTests/Test1'
 import Signup from './components/Signup/Signup'
 import Signin from './components/Signin/Signin'
 import Student from './components/Student/Student'
 import Admin from './components/Admin/Admin'
+import AddaPsychiatrist from './components/AddaPsychiatrist/AddaPsychiatrist'
 import Psychiatrist from './components/Psychiatrist/Psychiatrist'
 import Join from './components/ServerRoom/Join/Join'
 import Chat from './components/ServerRoom/Chat/Chat'
@@ -30,10 +30,22 @@ const Routing = () =>{
   const {state,dispatch} = useContext(UserContext)
   useEffect(()=>{
     const user = JSON.parse(localStorage.getItem("user"))
-    if(user){
-      dispatch({type:"USER", payload:user})
-      history.push('/profile')
+    if(user)
+    {
+      if(user.role == 'student'){
+        dispatch({type:"USER", payload:user})
+        history.push('/student')
+      }
+      else if(user.role == 'admin'){
+        dispatch({type:"ADMIN", payload:user})
+        history.push('/admin')
+      }
+      else if(user.role == 'psychiatrist'){
+        dispatch({type:"PSYCHIATRIST", payload:user})
+        history.push('/psychiatrist')
+      }
     }
+   
     else{
       history.push('/')
     }
@@ -110,6 +122,10 @@ const Routing = () =>{
               <Admin />
             </Route>
 
+            <Route path="/admin/add" exact >
+              <AddaPsychiatrist />
+            </Route>
+
             <Route path="/psychiatrist" exact >
               <Psychiatrist />
             </Route>
@@ -127,21 +143,12 @@ const Routing = () =>{
 
 function App() {
   const [state,dispatch] = useReducer(reducer,initialState)
-  const [sidebarOpen, setsidebarOpen] = useState(false);
-  const openSidebar = () => {
-    setsidebarOpen(true);
-  };
-  const closeSidebar = () => {
-    setsidebarOpen(false);
-  };
-
   return (
     <UserContext.Provider value={{state,dispatch}}>
       <BrowserRouter>
       <div className="container">
-        <NavBar sidebarOpen={sidebarOpen} openSidebar={openSidebar} />
+        <NavBar />
           <Routing />
-        {/* <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} /> */}
       </div>
       </BrowserRouter>
     </UserContext.Provider>

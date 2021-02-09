@@ -1,7 +1,11 @@
 import React,{useState, useEffect} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import "./Student.css";
+import hello from "../../images/hello.svg";
+import Chart from "../charts/Chart";
 import image1 from '../../images/idCard.png'
 // import { Line } from 'react-chartjs-2'
+
 const Profile = ()=> {
     const [data,setData] = useState([])
     const [score1,setScore1] = useState(0)
@@ -39,163 +43,113 @@ const Profile = ()=> {
         })
     },[])
     return (
-        <div className="profile-body">
-            {
-                data.map(item=>{
-                    return(
-                        <div className="container" key={item._id}>
-                        <div className="profile-header">
-                            <div className="profile-img">
-                                <img src={image1} width="200" alt="mypic" />
-                            </div>
-
-                            <div className="profile-nav-info">
-                                <h3 className="user-name">{item.name}</h3>
-                                <h6 className="address">{item.gender}</h6>
-                                <div className="address">
-                                    <p className="state">{item.address}</p>
-                                    {/* <span className="country">India</span> */}
-                                </div>
-                            </div>
-
-                            <div className="profile-option">
-                                <div className="notification">
-                                    <FontAwesomeIcon icon="bell"/>
-                                    <span className="alert-message">1</span>
-                                </div>
+        <main>
+        {
+            data.map(item=>{
+                return(
+                    <div className="admin__container">
+                        <div className="admin__title">
+                            <img src={hello} alt="hello" />
+                            <div className="admin__greeting">
+                                <h1>Hello {item.name}</h1>
+                                <p>Welcome to your Dashboard</p>
                             </div>
                         </div>
 
-                        <div className="main-bd">
-                            <div className="left-side">
-                                <div className="profile-side">
-                                    <p className="mobile-no"><FontAwesomeIcon icon="phone" />{item.phoneNo}</p>
-                                    <p className="user-mail"><FontAwesomeIcon icon="envelope" />{item.email}</p>
-                                
-                                    <div className="user-bio">
-                                        <h3>Bio</h3>
-                                        <p className="bio">Loren ipsum dolar sit amot, consectetur adiposing eleit.</p>
+                        <div className="admin__cards">
+                            
+                            <div className="card">
+                                <FontAwesomeIcon icon="stethoscope" size="2x" />
+                                <div className="card__inner">
+                                    <p className="text-primary-p">Name</p>
+                                    <span className="font-bold text-title">{item.name}</span>
+                                </div>
+                            </div>
+
+                            <div className="card">
+                                <FontAwesomeIcon icon="stethoscope" size="2x" />
+                                <div className="card__inner">
+                                    <p className="text-primary-p">Gender</p>
+                                    <span className="font-bold text-title">{item.gender}</span>
+                                </div>
+                            </div>
+
+                            <div className="card">
+                                <FontAwesomeIcon icon="stethoscope" size="2x" />
+                                <div className="card__inner">
+                                    <p className="text-primary-p">Email</p>
+                                    <span className="font-bold text-title">{item.email}</span>
+                                </div>
+                            </div>
+
+                            <div className="card">
+                                <FontAwesomeIcon icon="stethoscope" size="2x" />
+                                <div className="card__inner">
+                                    <p className="text-primary-p">Phone Number</p>
+                                    <span className="font-bold text-title">{item.phoneNo}</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div className="charts">
+                            <div className="charts__left">
+                                <div className="charts__left__title">
+                                    <div>
+                                        <h1>Your Progress</h1>
+                                        <p>based on Mental Health</p>
+                                    </div>
+                                    <i className="fa fa-usd" aria-hidden="true"></i>
+                                </div>
+                                <Chart />
+                            </div>
+
+                            <div className="charts__right">
+                                <div className="charts__right__title">
+                                    <div>
+                                        <h1>Test Reports</h1>
+                                        <p>Mental Health Assessments</p>
+                                    </div>
+                                    <i className="fa fa-usd" aria-hidden="true"></i>
+                                </div>
+
+
+                                <div className="charts__right__cards">
+                                    <div className="card1">
+                                        <h2>Patient Health Questionare: PHQ-9</h2>
+                                        <h2>{score1}</h2>
                                     </div>
 
-                                    <div className="profile-btn">
-                                        <button className="chatbtn"><FontAwesomeIcon icon="comment" />Chat</button>
-                                        <button className="createbtn"><FontAwesomeIcon icon="plus" />Aspmt</button>
+                                    <div className="card2">
+                                        <h2>Generalized Anxiety Disorder: GAD-7</h2>
+                                        <h2>{score2}</h2>
+                                    </div>
+
+                                    <div className="card3">
+                                        <h2>Obsessive Compulsive Inventory: OCI-R</h2>
+                                        <h2>{score3}</h2>
+                                    </div>
+
+                                    <div className="card4">
+                                        <h2>Edinburgh Postnatal Depression: EBPS</h2>
+                                        <h2>{score4}</h2>
+                                    </div>
+
+                                    <div className="card1">
+                                        <h2>Insomnia Severity Index: ISI</h2>
+                                        <h2>{score5}</h2>
                                     </div>
 
                                 </div>
                             </div>
 
-                            <div className="container right-side">
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <div className="card text-center">
-                                            <div className="card-header">
-                                                <div className="row align-items-center">
-                                                    <div className="col">
-                                                        <FontAwesomeIcon icon="bars" />
-                                                    </div>
-
-                                                    <div className="col">
-                                                        <h3 className="display-3">{score1}</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="card-footer">
-                                                <h5>Test1</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-6">
-                                        <div className="card text-center">
-                                            <div className="card-header">
-                                                <div className="row align-items-center">
-                                                    <div className="col">
-                                                        <FontAwesomeIcon icon="bars" />
-                                                    </div>
-
-                                                    <div className="col">
-                                                        <h3 className="display-3">{score2}</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="card-footer">
-                                                <h5>Test2</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-6">
-                                        <div className="card text-center">
-                                            <div className="card-header">
-                                                <div className="row align-items-center">
-                                                    <div className="col">
-                                                        <FontAwesomeIcon icon="bars" />
-                                                    </div>
-
-                                                    <div className="col">
-                                                        <h3 className="display-3">{score3}</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="card-footer">
-                                                <h5>Test3</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-6">
-                                        <div className="card text-center">
-                                            <div className="card-header">
-                                                <div className="row align-items-center">
-                                                    <div className="col">
-                                                        <FontAwesomeIcon icon="bars" />
-                                                    </div>
-
-                                                    <div className="col">
-                                                        <h3 className="display-3">{score4}</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="card-footer">
-                                                <h5>Test4</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-6">
-                                        <div className="card text-center">
-                                            <div className="card-header">
-                                                <div className="row align-items-center">
-                                                    <div className="col">
-                                                        <FontAwesomeIcon icon="bars" />
-                                                    </div>
-
-                                                    <div className="col">
-                                                        <h3 className="display-3">{score5}</h3>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="card-footer">
-                                                <h5>Test5</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
                         </div>
                     </div>
-       
-                    )
-                })
-            }
-        </div>        
+                )
+            })
+        }
+    </main>
     )
 }
 

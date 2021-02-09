@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import './Breathing.css';
 
 const Breathing = ()=> {
     const [breathingState,setbreathingState] = useState("Inhale");
@@ -8,7 +9,7 @@ const Breathing = ()=> {
     }
 
     if(breathingState === 'Hold'){
-        setTimeout(function(){setbreathingState("Exhale");},1500);
+        setTimeout(function(){setbreathingState("Exhale");},3000);
     }
 
     if(breathingState === 'Exhale'){

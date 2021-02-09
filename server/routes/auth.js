@@ -96,6 +96,44 @@ router.get('/profile', requireLogin, (req,res)=>{
 })
 
 
+router.post('/add', (req,res)=>{
+    // age, gender, address, profile pic, phoneno
+    const {name,email,password,age,gender,address,phoneNo, role} = req.body
+    if(!email || !name || !password || !age || !gender || !address || !phoneNo){
+        return res.status(422).json({error:"Please Enter All the Fields"})
+    }
+    User.findOne({email:email})
+        .then((savedUser)=>{
+            if(savedUser){
+                return res.status(422).json({error:"User already exists"})
+            }
+            bcrypt.hash(password, 12)
+            .then(hashedpassword=>{
+                const user = new User({
+                    name:name,
+                    email:email,
+                    password:hashedpassword,
+                    age:age,
+                    gender:gender,
+                    address:address,
+                    phoneNo:phoneNo,
+                    role:role
+                })
+                user.save()
+                    .then(user=>{
+                        res.json({message:"Psychiatrist Added Successfully"})
+                    })
+                    .catch(err=>{
+                        console.log(err)
+                    })
+                })     
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+})
+
+
 
 
 

@@ -13,7 +13,7 @@ const Admin = () => {
         <div className="admin__title">
           <img src={hello} alt="hello" />
           <div className="admin__greeting">
-            <h1>Hello Codersbite</h1>
+            <h1>Hello Admin</h1>
             <p>Welcome to your admin dashboard</p>
           </div>
         </div>
