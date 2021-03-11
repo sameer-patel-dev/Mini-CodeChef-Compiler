@@ -12,12 +12,12 @@ const authenticator = new IamAuthenticator({
 });
 
 const assistant =  new AssistantV2({
-    version: "2020-07-11",
+    version: "2020-02-09",
     authenticator: authenticator,
     url: WATSON_ASSISTANT_URL,
 });
 
-router.get("/session", requireLogin, async(req,res)=>{
+router.get("/session", async(req,res)=>{
     try {
         const session = await assistant.createSession({
             assistantId: WATSON_ASSISTANT_ID
@@ -30,7 +30,7 @@ router.get("/session", requireLogin, async(req,res)=>{
     }
 });
 
-router.post("/message", requireLogin, async (req, res) => {
+router.post("/message", async (req, res) => {
     payload = {
       assistantId: WATSON_ASSISTANT_ID,
       sessionId: req.headers.session_id,

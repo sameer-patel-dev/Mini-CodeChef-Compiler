@@ -22,6 +22,9 @@ import {Test2Data} from './components/AspmtTests/Test2Data';
 import {Test3Data} from './components/AspmtTests/Test3Data';
 import {Test4Data} from './components/AspmtTests/Test4Data';
 import {Test5Data} from './components/AspmtTests/Test5Data';
+import WatsonChat from './WatsonChat';
+import Atc from './components/Atc/Atc';
+import AtcSee from './components/AtcSee/AtcSee';
 
 export const UserContext = createContext()
 
@@ -134,6 +137,18 @@ const Routing = () =>{
             </Route>
 
             <Route path="/chat" component={Chat}>
+            </Route>
+
+            <Route path="/watson" exact >
+              <WatsonChat />
+            </Route>
+
+            <Route path="/exercise/atc" exact >
+              <Atc />
+            </Route>
+
+            <Route path="/seeatc" exact >
+              <AtcSee />
             </Route>
 
             

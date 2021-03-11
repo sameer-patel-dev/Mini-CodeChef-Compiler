@@ -8,6 +8,7 @@ const jwt = require("jsonwebtoken")
 const {JWT_SECRET} = require('../keys')
 const requireLogin = require('../middleware/requireLogin')
 const { post } = require('./test')
+const Atc = mongoose.model("Atc")
 
 router.post('/signup', (req,res)=>{
     // age, gender, address, profile pic, phoneno
@@ -134,7 +135,39 @@ router.post('/add', (req,res)=>{
 })
 
 
+router.post('/atc', requireLogin, (req,res)=>{
+    // age, gender, address, profile pic, phoneno
+    const {AutomaticThought, YourChallenge, AlternativeThought,  Feeling} = req.body
+    if(!AutomaticThought) {
+        return res.status(422).json({error:"No Text Received"})
+    }
+    req.user.password = undefined
+    const atc = new Atc({
+        AutomaticThought,
+        YourChallenge,
+        AlternativeThought,
+        Feeling,
+        takenBy: req.user
+    })
+    atc.save().then(result=>{
+        res.json({atc:result})
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+    
+})
 
 
+router.get('/getatc', requireLogin, (req,res)=>{
+    Atc.find({takenBy: req.user._id})
+    .populate("takenBy", "_id")
+    .then(details=>{
+        res.json({details})
+         })
+     .catch(err=>{
+          console.log(err)    
+    })
+})
 
 module.exports = router

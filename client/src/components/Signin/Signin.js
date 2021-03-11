@@ -33,17 +33,17 @@ const Signin = ()=> {
                 localStorage.setItem("user", JSON.stringify(data.user))
                 dispatch({type:"USER", payload:data.user})
                 alert("Signed In Successfully")
-                if(data.user.role == 'student')
+                if(data.user.role === 'student')
                 {
                     history.push('/student')
                 }
 
-                else if(data.user.role == 'admin')
+                else if(data.user.role === 'admin')
                 {
                     history.push('/admin')
                 }
 
-                else if(data.user.role == 'psychiatrist')
+                else if(data.user.role === 'psychiatrist')
                 {
                     history.push('/psychiatrist')
                 }
@@ -63,9 +63,9 @@ const Signin = ()=> {
                 <div className="signin_form">
                     <h1 className='signin_h1'>Create Account</h1>
                     <div className="signin_social-container">
-                        <a href="#" className="social signin_a"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
+                        <a className="social signin_a"><i className="fab fa-facebook-f"></i></a>
+                        <a className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
+                        <a className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                     <span className="signin_span">or use your email for registration</span>
                     <input className="signin_input" type="text" placeholder="Name" />
@@ -78,14 +78,14 @@ const Signin = ()=> {
                 <div className="signin_form">
                     <h1 className='signin_h1'>Sign in</h1>
                     <div className="signin_social-container">
-                        <a href="#" className="social signin_a"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
+                        <a className="social signin_a"><i className="fab fa-facebook-f"></i></a>
+                        <a className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
+                        <a className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                     <span className="signin_span">or use your account</span>
                     <input className="signin_input" type="email" placeholder="Email Address" value={email} onChange={(e)=>setEmail(e.target.value)} />
                     <input className="signin_input" type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-                    <a href="#" className="signin_a">Forgot your password?</a>
+                    <a className="signin_a">Forgot your password?</a>
                     <button className="signin_button" onClick={()=>postData()}>Sign In</button>
                 </div>
             </div>

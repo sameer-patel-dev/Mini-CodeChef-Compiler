@@ -18,9 +18,9 @@ const Join = () => {
                 <div className="signin_form">
                     <h1 className='signin_h1'>Create Account</h1>
                     <div className="signin_social-container">
-                        <a href="#" className="social signin_a"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
+                        <a className="social signin_a"><i className="fab fa-facebook-f"></i></a>
+                        <a className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
+                        <a className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                     <span className="signin_span">or use your email for registration</span>
                     <input className="signin_input" type="text" placeholder="Name" />
@@ -33,9 +33,9 @@ const Join = () => {
                 <div className="signin_form">
                     <h1 className='signin_h1'>Chat Room</h1>
                     <div className="signin_social-container">
-                        <a href="#" className="social signin_a"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
+                        <a className="social signin_a"><i className="fab fa-facebook-f"></i></a>
+                        <a className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
+                        <a className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                     <input className="signin_input" type="text" placeholder="Name" onChange={(event)=> setName(event.target.value)} />
                     <input className="signin_input" type="text" placeholder="Room" onChange={(event)=> setRoom(event.target.value)}/>

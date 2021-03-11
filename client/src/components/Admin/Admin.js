@@ -30,8 +30,8 @@ const Admin = () => {
              */}
              <FontAwesomeIcon icon="stethoscope" size="2x" />
             <div className="card_inner">
-              <p className="text-primary-p">Number of Subscribers</p>
-              <span className="font-bold text-title">578</span>
+              <p className="text-primary-p">Number of Users</p>
+              <span className="font-bold text-title">9</span>
             </div>
           </div>
 
@@ -39,8 +39,8 @@ const Admin = () => {
             {/* <i className="fa fa-calendar fa-2x text-red" aria-hidden="true"></i> */}
             <FontAwesomeIcon icon="stethoscope" size="2x" />
             <div className="card_inner">
-              <p className="text-primary-p">Times of Watching</p>
-              <span className="font-bold text-title">2467</span>
+              <p className="text-primary-p">Number of Psychiatrists</p>
+              <span className="font-bold text-title">2</span>
             </div>
           </div>
 
@@ -51,8 +51,8 @@ const Admin = () => {
             ></i> */}
             <FontAwesomeIcon icon="stethoscope" size="2x" />
             <div className="card_inner">
-              <p className="text-primary-p">Number of Videos</p>
-              <span className="font-bold text-title">340</span>
+              <p className="text-primary-p">Number of Students</p>
+              <span className="font-bold text-title">7</span>
             </div>
           </div>
 
@@ -63,8 +63,8 @@ const Admin = () => {
             ></i> */}
             <FontAwesomeIcon icon="stethoscope" size="2x" />
             <div className="card_inner">
-              <p className="text-primary-p">Number of Likes</p>
-              <span className="font-bold text-title">645</span>
+              <p className="text-primary-p">Number of ATC</p>
+              <span className="font-bold text-title">3</span>
             </div>
           </div>
         </div>
@@ -75,8 +75,8 @@ const Admin = () => {
           <div className="charts__left">
             <div className="charts__left__title">
               <div>
-                <h1>Daily Reports</h1>
-                <p>Cupertino, California, USA</p>
+                <h1>User Reports</h1>
+                <p>User's Progress</p>
               </div>
               <i className="fa fa-usd" aria-hidden="true"></i>
             </div>
@@ -86,31 +86,31 @@ const Admin = () => {
           <div className="charts__right">
             <div className="charts__right__title">
               <div>
-                <h1>Stats Reports</h1>
-                <p>Cupertino, California, USA</p>
+                <h1>User Reports</h1>
+                <p>Different Users</p>
               </div>
               <i className="fa fa-usd" aria-hidden="true"></i>
             </div>
 
             <div className="charts__right__cards">
               <div className="card1">
-                <h1>Income</h1>
-                <p>$75,300</p>
+                <h1>Sameer Patel</h1>
+                <p>Student</p>
               </div>
 
               <div className="card2">
-                <h1>Sales</h1>
-                <p>$124,200</p>
+                <h1>Mittal Jain</h1>
+                <p>Psychiatrist</p>
               </div>
 
               <div className="card3">
-                <h1>Users</h1>
-                <p>3900</p>
+                <h1>Sarvesh Pai</h1>
+                <p>Student</p>
               </div>
 
               <div className="card4">
-                <h1>Orders</h1>
-                <p>1881</p>
+                <h1>Jignesh Nadga</h1>
+                <p>Student</p>
               </div>
             </div>
           </div>

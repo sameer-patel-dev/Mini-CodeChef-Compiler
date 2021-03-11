@@ -25,7 +25,7 @@ const Navbar = () => {
                                             history.push('/signin')
                                       }}>SignOut
           </Link>,
-          <a href="#!">
+          <a>
             <img width="30" src={avatar} alt="avatar" />
           </a>
               ]
@@ -34,7 +34,7 @@ const Navbar = () => {
       else if(state.role == 'psychiatrist')
       {
         return [
-          <Link to="/join">Clients</Link>,
+          <Link to='/psychiatrist'>Profile</Link>,
           <Link to="/join">Chatroom</Link>,
           <Link to="/signin" onClick={()=>{
                                             localStorage.clear()
@@ -42,7 +42,7 @@ const Navbar = () => {
                                             history.push('/signin')
                                       }}>SignOut
           </Link>,
-          <a href="#!">
+          <a>
             <img width="30" src={avatar} alt="avatar" />
           </a>
               ]
@@ -53,6 +53,7 @@ const Navbar = () => {
         return [
           <Link to="/student">Profile</Link>,
           <Link to="/exercise">Exercises</Link>,
+          <Link to='/watson'>Virtual Psychiatrist</Link>,
           <Link to="/join">Chatroom</Link>,
           <Link to="/signin" onClick={()=>{
                                 localStorage.clear()
@@ -60,7 +61,7 @@ const Navbar = () => {
                                 history.push('/signin')
                             }}>SignOut
           </Link>,
-          <a href="#!">
+          <a>
             <img width="30" src={avatar} alt="avatar" />
           </a>
               ]

@@ -11,8 +11,8 @@ const Home = ()=> {
                 <div className="admin__title">
                     <img src={image1} alt="hello" />
                         <div className="admin__greeting">
-                            <h1>Hello Codersbite</h1>
-                            <p>Welcome to your admin dashboard</p>
+                            <h1>Hello</h1>
+                            <p>Welcome to your Home Page</p>
                         </div>
                 </div>
             </div>

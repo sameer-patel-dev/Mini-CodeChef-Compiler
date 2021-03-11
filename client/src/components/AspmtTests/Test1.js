@@ -1,8 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import {Link, useHistory} from 'react-router-dom';
-
 import { Questionaire } from './'
-import { Test1Data } from './Test1Data';
+
 function Test1(TestData) {
     const[questions, setQuestions] = useState([]);
     const[currentIndex, setCurrentIndex] = useState(0);
@@ -59,7 +58,7 @@ function Test1(TestData) {
             }
             else{
                 alert("Score stored")
-                history.push('/profile')
+                history.push('/student')
             }
         }).catch(err=>{
             console.log(err)
@@ -67,13 +66,20 @@ function Test1(TestData) {
     }
 
     return questions.length > 0 ? (
-        <div className="container mt-5">
+        <div className="admin__container">
             {currentIndex >= questions.length ? (
-                <div>
-                    <h1>Your Score is {score}</h1>
-                    <br/>
-                    <button className="btn btn-primary quizNextButton" onClick={()=>storeScore()}>Go To Dashboard</button>
+                <div className="atc_charts">
+                    <div className="charts__right">
+                        <div className="charts__right__title">
+                            <div>
+                                <h1>Your Score is {score}</h1>
+                                <button className="signin_button" onClick={()=>storeScore()}>Go To Dashboard</button>
+                            </div>
+                            <i className="fa fa-usd" aria-hidden="true"></i>
+                        </div>
+                    </div> 
                 </div>
+            
             ) : (
                 <Questionaire 
                 data = {questions[currentIndex]}

@@ -58,6 +58,7 @@ mongoose.connection.on('error', (err)=>{
 
 require('./models/user')
 require('./models/test')
+require('./models/atc')
 
 
 app.use(express.json())

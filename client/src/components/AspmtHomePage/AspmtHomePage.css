@@ -34,16 +34,16 @@
 
 .AspmtHomePage_container:hover .AspmtHomePage_card
 {
-    filter: blur(20px);
+    /* filter: blur(20px); */
     transform: scale(0.9);
-    opacity: 0.5;
+    /* opacity: 0.5; */
 }
 
 .AspmtHomePage_container .AspmtHomePage_card:hover
 {
-    filter: blur(0px);
+    /* filter: blur(0px); */
     transform: scale(1.1);
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 .AspmtHomePage_container .AspmtHomePage_card .AspmtHomePage_circle

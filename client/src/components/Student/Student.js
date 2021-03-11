@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import "./Student.css";
 import hello from "../../images/hello.svg";
 import Chart from "../charts/Chart";
-import image1 from '../../images/idCard.png'
+import {Link,useHistory} from 'react-router-dom';
 // import { Line } from 'react-chartjs-2'
 
 const Profile = ()=> {
@@ -145,6 +145,21 @@ const Profile = ()=> {
                             </div>
 
                         </div>
+
+                        <Link to='/seeatc'>
+                        <div className="atc_charts">
+                            <div className="charts__right">
+                                <div className="charts__right__title">
+                                    <div>
+                                        <h1>Check my Automatic Thought Challenges</h1>
+                                    </div>
+                                    <i className="fa fa-usd" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        </Link>
+
+
                     </div>
                 )
             })

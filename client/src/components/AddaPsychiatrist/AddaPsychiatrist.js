@@ -65,21 +65,21 @@ const AddaPsychiatrist = ()=> {
                     <input className="signin_input" type="text" placeholder="Address" value={address} onChange={(e)=>setAddress(e.target.value)}/>
                     <input className="signin_input" type="text" placeholder="Phone Number" value={phoneNo} onChange={(e)=>setPhoneNo(e.target.value)}/>
 
-                    <button className="signin_button" onClick={()=>postData()}>Sign Up</button>
+                    <button className="signin_button" onClick={()=>postData()}>Add Psychiatrist</button>
                 </div>
             </div>
             <div className="signin_form-container signin_sign-in-container">
                 <div className="signin_form">
                     <h1 className='signin_h1'>Sign in</h1>
                     <div className="signin_social-container">
-                        <a href="#" className="social signin_a"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
+                        <a className="social signin_a"><i className="fab fa-facebook-f"></i></a>
+                        <a className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
+                        <a className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                     <span className="signin_span">or use your account</span>
                     <input className="signin_input" type="email" placeholder="Email Address" value={email} onChange={(e)=>setEmail(e.target.value)} />
                     <input className="signin_input" type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-                    <a href="#" className="signin_a">Forgot your password?</a>
+                    <a className="signin_a">Forgot your password?</a>
                     <button className="signin_button" onClick={()=>postData()}>Sign In</button>
                 </div>
             </div>

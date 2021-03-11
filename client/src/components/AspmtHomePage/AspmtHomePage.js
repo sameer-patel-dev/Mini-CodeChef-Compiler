@@ -1,9 +1,8 @@
-import React,{useState} from 'react';
-import {Link,useHistory} from 'react-router-dom';
+import React from 'react';
+import {Link} from 'react-router-dom';
 import './AspmtHomePage.css';
 
 const Aspmt = ()=> {
-    const history = useHistory()
     return (
         <div className="AspmtHomePage_body">
         <div className="AspmtHomePage_container">
@@ -19,7 +18,7 @@ const Aspmt = ()=> {
                 </div>
 
             
-                <div className="AspmtHomePage_card" to='/exercise/aspmts/test2'>
+                <div className="AspmtHomePage_card">
                     <div className="AspmtHomePage_circle">
                         <h2>02</h2>
                     </div>

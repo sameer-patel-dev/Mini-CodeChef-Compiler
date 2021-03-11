@@ -65,6 +65,13 @@ main {
     gap: 30px;
     margin-top: 50px;
   }
+
+  .atc_charts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 50px;
+  }
   
   .charts__left {
     padding: 25px;

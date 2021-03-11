@@ -56,7 +56,7 @@ const Signup = ()=> {
         <div className="container signin_container right-panel-active" id="container">
             <div className="signin_form-container signin_sign-up-container">
                 <div className="signin_form">
-                    <h1 className='signin_h1'>Create Account</h1>
+                <h1 className='signin_h1'>Create Account</h1>
                     <input className="signin_input" type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} />
                     <input className="signin_input" type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} />
                     <input className="signin_input" type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} />
@@ -70,17 +70,16 @@ const Signup = ()=> {
             </div>
             <div className="signin_form-container signin_sign-in-container">
                 <div className="signin_form">
-                    <h1 className='signin_h1'>Sign in</h1>
-                    <div className="signin_social-container">
-                        <a href="#" className="social signin_a"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-google-plus-g"></i></a>
-                        <a href="#" className="social signin_a"><i className="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <span className="signin_span">or use your account</span>
-                    <input className="signin_input" type="email" placeholder="Email Address" value={email} onChange={(e)=>setEmail(e.target.value)} />
-                    <input className="signin_input" type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-                    <a href="#" className="signin_a">Forgot your password?</a>
-                    <button className="signin_button" onClick={()=>postData()}>Sign In</button>
+                <h1 className='signin_h1'>Create Account</h1>
+                    <input className="signin_input" type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} />
+                    <input className="signin_input" type="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} />
+                    <input className="signin_input" type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)} />
+                    <input className="signin_input" type="text" placeholder="Age" value={age} onChange={(e)=>setAge(e.target.value)} />
+                    <input className="signin_input" type="text" placeholder="Gender" value={gender} onChange={(e)=>setGender(e.target.value)} />
+                    <input className="signin_input" type="text" placeholder="Address" value={address} onChange={(e)=>setAddress(e.target.value)}/>
+                    <input className="signin_input" type="text" placeholder="Phone Number" value={phoneNo} onChange={(e)=>setPhoneNo(e.target.value)}/>
+
+                    <button className="signin_button" onClick={()=>postData()}>Sign Up</button>
                 </div>
             </div>
             <div className="signin_overlay-container">
@@ -88,7 +87,7 @@ const Signup = ()=> {
                     <div className="signin_overlay-panel signin_overlay-left">
                         <h1 className='signin_h1'>Welcome Back!</h1>
                         <p className="signin_p">To keep connected with us please login with your personal info</p>
-                        <button className="signin_button ghost" id="signIn">Sign In</button>
+                        <Link to='/signin'><button className="signin_button ghost" id="signIn">Sign In</button></Link>
                     </div>
                     <div className="signin_overlay-panel signin_overlay-right">
                         <h1 className='signin_h1'>Hello, Friend!</h1>
