@@ -7,7 +7,8 @@ MiniCodeChef Compiler is a CLI based mini project developed using Python to chec
 - Code Evaluation Check
 
 ## CLI
-![Responsice Mockup](https://github.com/sameer-patel-dev/Repo/blob/master/images/1.png)
+![Responsice Mockup](https://github.com/sameer-patel-dev/Repo/blob/master/images/1.PNG)
+![Responsice Mockup](https://github.com/sameer-patel-dev/Repo/blob/master/images/2.PNG)
 
 ## Future Scope
 Adding more Programming Languages
