@@ -1,7 +1,7 @@
 import os
 import filecmp
 
-def compile(file, language):
+def compile_code(file, language):
     if language == 'java':
         class_file = file[:-4]+"class"
 
@@ -23,7 +23,7 @@ def compile(file, language):
         return 404
 
 
-def run(file, input, timeout, language):
+def run_code(file, input, timeout, language):
     if language == 'java':
         cmd = 'java '+file
 
@@ -44,7 +44,7 @@ def run(file, input, timeout, language):
         return 400
 
 
-def match(output):
+def match_code(output):
     if os.path.isfile('out.txt') and os.path.isfile(output):
         b = filecmp.cmp('out.txt', output)
         return b
@@ -58,18 +58,19 @@ language = input("Enter java for Java Lanuage or python for Python language\n")
 
 testin = 'testin.txt'
 testout = 'testout.txt'
-timeout = '2' # secs
-
+timeout = '2'
 http_codes = { 200:'Compilation Successfull', 404:'File Not Found', 400:'Error', 408:'Timeout'}
 
+
+
 if language == 'java':
-    print(http_codes[compile(file, language)])
+	print(http_codes[compile_code(file, language)])
 else:
-	print(http_codes[run('Main', testin, timeout, language)])
+	print(http_codes[run_code('Main', testin, timeout, language)])
 
 
 
-if match(testout) is True:
+if match_code(testout) is True:
 	print("Your Code is Accepted")
 else:
 	print("Your Code is not Accepted")
