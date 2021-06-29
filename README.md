@@ -1,4 +1,4 @@
-# MiniCodeChef Compiler
+# Mini-CodeChef Compiler
 
 MiniCodeChef Compiler is a CLI based mini project developed using Python to check Code Compilation and Code Evaluation.
 
